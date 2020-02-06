@@ -1,0 +1,57 @@
+[package]
+name = "conjugatepoc-runtime"
+version = "0.1.0"
+authors = ["Wei Tang <hi@that.world>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0", optional = true, features = ["derive"] }
+safe-mix = { version = "1.0", default-features = false }
+codec = { package = "parity-scale-codec", version = "1.0.0", default-features = false, features = ["derive"] }
+rstd = { package = "sr-std", path = "../vendor/substrate/core/sr-std", default_features = false }
+runtime-io = { package = "sr-io", path = "../vendor/substrate/core/sr-io", default_features = false }
+version = { package = "sr-version", path = "../vendor/substrate/core/sr-version", default_features = false }
+support = { package = "srml-support", path = "../vendor/substrate/srml/support", default_features = false }
+primitives = { package = "substrate-primitives", path = "../vendor/substrate/core/primitives", default_features = false }
+balances = { package = "srml-balances", path = "../vendor/substrate/srml/balances", default_features = false }
+executive = { package = "srml-executive", path = "../vendor/substrate/srml/executive", default_features = false }
+indices = { package = "srml-indices", path = "../vendor/substrate/srml/indices", default_features = false }
+system = { package = "srml-system", path = "../vendor/substrate/srml/system", default_features = false }
+timestamp = { package = "srml-timestamp", path = "../vendor/substrate/srml/timestamp", default_features = false }
+sr-primitives = { path = "../vendor/substrate/core/sr-primitives", default_features = false }
+client = { package = "substrate-client", path = "../vendor/substrate/core/client", default_features = false }
+offchain-primitives = { package = "substrate-offchain-primitives", path = "../vendor/substrate/core/offchain/primitives", default-features = false }
+poc-primitives = { package = "substrate-consensus-poc-primitives", path = "../vendor/substrate/core/consensus/poc/primitives", default-features = false }
+conjugatepoc-primitives = { path = "../primitives", default-features = false }
+substrate-session = { path = "../vendor/substrate/core/session", default-features = false }
+anyupgrade = { package = "srml-anyupgrade", path = "../anyupgrade", default-features = false }
+rewards = { package = "srml-rewards", path = "../rewards", default-features = false }
+
+[build-dependencies]
+wasm-builder-runner = { package = "substrate-wasm-builder-runner", version = "1.0.2" }
+
+[features]
+default = ["std"]
+std = [
+	"codec/std",
+	"client/std",
+	"rstd/std",
+	"runtime-io/std",
+	"support/std",
+	"balances/std",
+	"executive/std",
+	"indices/std",
+	"primitives/std",
+	"sr-primitives/std",
+	"system/std",
+	"timestamp/std",
+	"version/std",
+	"serde",
+	"safe-mix/std",
+	"offchain-primitives/std",
+	"poc-primitives/std",
+	"substrate-session/std",
+	"conjugatepoc-primitives/std",
+	"anyupgrade/std",
+	"rewards/std",
+]

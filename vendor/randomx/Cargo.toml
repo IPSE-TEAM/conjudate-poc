@@ -1,0 +1,22 @@
+[package]
+name = "randomx"
+description = "Proof-of-capacity (PoC) algorithm that is optimized for general-purpose CPUs"
+license = "BSD-3-Clause"
+version = "0.1.0"
+authors = ["Ton <ton2020@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+sys = { package = "randomx-sys", version = "0.1", path = "sys" }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "fullvm"
+harness = false
+
+[workspace]
+members = [
+  "sys"
+]

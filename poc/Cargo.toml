@@ -1,0 +1,29 @@
+[package]
+name = "conjugatepoc-poc"
+version = "0.1.0"
+authors = ["Tom <tom2020@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+consensus-poc = { package = "substrate-consensus-poc", path = "../vendor/substrate/core/consensus/poc" }
+consensus-poc-primitives = { package = "substrate-consensus-poc-primitives", path = "../vendor/substrate/core/consensus/poc/primitives" }
+sr-primitives = { path = "../vendor/substrate/core/sr-primitives" }
+primitives = { package = "substrate-primitives", path = "../vendor/substrate/core/primitives" }
+client = { package = "substrate-client", path = "../vendor/substrate/core/client" }
+randomx = { path = "../vendor/randomx" }
+codec = { package = "parity-scale-codec", version = "1.0.0" }
+log = "0.4"
+conjugatepoc-primitives = { path = "../primitives" }
+conjugatepoc-runtime = { path = "../runtime" }
+consensus-common = { package = "substrate-consensus-common", path = "../vendor/substrate/core/consensus/common" }
+inherents = { package = "substrate-inherents", path = "../vendor/substrate/core/inherents" }
+lru-cache = "0.1"
+rand = "0.5"
+hex = "0.3.1"
+jsonrpc-http-server = "14.0"
+jsonrpc-core = "14.0"
+jsonrpc-derive = "14.0"
+serde_derive = "1.0.84"
+serde = "1.0.84"
+serde_json = "1.0.34"
+pocjsonrpc = { package = "pocjsonrpc", path = "../pocjsonrpc" }
